@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="fontawesome-free-6.4.2-web/css/all.min.css" />
+
+    <title>Document</title>
+  </head>
+  <body class="bg-[#0D0D0D]">
+    <nav class="h-screen w-80 grid grid-cols-5 fixed z-50 top-0">
+      <div
+        class="side-nav bg-[#0D0D0D] col-span-4 ms-7 mt-9 flex flex-col justify-between"
+      >
+        <div class="grid grid-cols-1 text-white gap-4">
+          <button class="text-left">Search</button>
+          <button onclick="openCategorie()" class="text-left">
+            Categories
+          </button>
+          <button onclick="openAreas()" class="text-left">Area</button>
+          <button onclick="openIngredient()" class="text-left">
+            Ingredients
+          </button>
+          <button class="text-left">Contact Us</button>
+        </div>
+        <div class="text-white">
+          <div>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-solid fa-globe"></i>
+          </div>
+          <p class="mb-5">Copyright Â© 2019 All Rights Reserved.</p>
+        </div>
+      </div>
+
+      <div class="bg-white grid grid-cols-1 pt-5 pb-8">
+        <img class="w-[75%] mx-auto" src="/assets/logo.png" alt="" />
+
+        <div class="mx-auto flex flex-col justify-between">
+          <div class="btn-nav text-black">
+            <button
+              onclick="openNav()"
+              class="fa-solid open-close-icon fa-2x fa-align-justify"
+            ></button>
+          </div>
+          <div class="flex flex-col gap-1">
+            <i class="fa-solid fa-globe d-block"></i>
+            <i class="fa-solid fa-share-nodes"></i>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="home hidden mt-12">
+      <div
+        class="food-details-home grid grid-cols-3 gap-7 w-[66%] mx-auto hidden"
+      >
+        <div>
+          <img
+            class="rounded-md"
+            src="https://www.themealdb.com/images/media/meals/58oia61564916529.jpg"
+            alt=""
+          />
+          <h2 class="text-white font-semibold text-3xl mt-2">Corba</h2>
+        </div>
+
+        <div class="col-span-2 text-white">
+          <div class="flex justify-between">
+            <h2 class="font-semibold text-3xl">Instructions</h2>
+            <button
+              onclick="closeDetails()"
+              class="text-black bg-red-600 p-1 rounded-xl fa-solid open-close-icon fa-2x fa-x"
+            ></button>
+          </div>
+          <p class="mt-2 mb-4">
+            Pick through your lentils for any foreign debris, rinse them 2 or 3
+            times, drain, and set aside. Fair warning, this will probably turn
+            your lentils into a solid block that you’ll have to break up later
+            In a large pot over medium-high heat, sauté the olive oil and the
+            onion with a pinch of salt for about 3 minutes, then add the carrots
+            and cook for another 3 minutes. Add the tomato paste and stir it
+            around for around 1 minute. Now add the cumin, paprika, mint, thyme,
+            black pepper, and red pepper as quickly as you can and stir for 10
+            seconds to bloom the spices. Congratulate yourself on how amazing
+            your house now smells. Immediately add the lentils, water, broth,
+            and salt. Bring the soup to a (gentle) boil. After it has come to a
+            boil, reduce heat to medium-low, cover the pot halfway, and cook for
+            15-20 minutes or until the lentils have fallen apart and the carrots
+            are completely cooked. After the soup has cooked and the lentils are
+            tender, blend the soup either in a blender or simply use a hand
+            blender to reach the consistency you desire. Taste for seasoning and
+            add more salt if necessary. Serve with crushed-up crackers, torn up
+            bread, or something else to add some extra thickness. You could also
+            use a traditional thickener (like cornstarch or flour), but I prefer
+            to add crackers for some texture and saltiness. Makes great
+            leftovers, stays good in the fridge for about a week.
+          </p>
+          <h3 class="font-medium text-2xl mb-2">
+            <span class="font-bold text-3xl">Area :</span> Turkish
+          </h3>
+          <h3 class="font-medium text-2xl mb-2">
+            <span class="font-bold text-3xl">Category :</span> Side
+          </h3>
+          <h3 class="font-semibold text-3xl">Recipes :</h3>
+          <div class="w-[100%] ms-3 mt-4 break-after-right">
+            <ul class="flex flex-wrap text-black">
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1 cup Lentils
+              </li>
+
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1 cup Lentils
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1 cup Lentils
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1 cup Lentils
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1/4 tsp Black Pepper
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1/4 tsp Red Pepper Flakes
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1/4 tsp Red Pepper Flakes
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1/4 tsp Red Pepper Flakes
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1/4 tsp Red Pepper Flakes
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1/4 tsp Red Pepper Flakes
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1/4 tsp Red Pepper Flakes
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1/4 tsp Red Pepper Flakes
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1/4 tsp Red Pepper Flakes
+              </li>
+            </ul>
+          </div>
+
+          <h3 class="font-medium text-3xl mt-2">Tags :</h3>
+          <ul class="text-black flex ms-3 mt-4">
+            <li
+              class="text-nowrap font-normal bg-[#F8D7DA] rounded-md me-4 mb-4 p-1"
+            >
+              Soup
+            </li>
+          </ul>
+
+          <ul class="text-white flex mt-4">
+            <a href="#" target="_blank">
+              <li
+                class="text-nowrap font-normal bg-green-700 rounded-md me-2 mb-4 ps-3 pe-3 pt-2 pb-2"
+              >
+                Source
+              </li>
+            </a>
+
+            <a href="#" target="_blank">
+              <li
+                class="text-nowrap font-normal bg-red-600 rounded-md mb-4 ps-3 pe-3 pt-2 pb-2"
+              >
+                Youtube
+              </li>
+            </a>
+          </ul>
+        </div>
+      </div>
+
+      <div class="food-hidden-home">
+        <div class="food-home grid grid-cols-4 gap-6 w-[70%] mx-auto">
+          <a onclick="openDetails()">
+            <div class="group relative overflow-hidden rounded-md">
+              <img
+                class="rounded-md"
+                src="https://www.themealdb.com/images/media/meals/58oia61564916529.jpg"
+                alt=""
+              />
+              <div
+                class="rounded-md bg-white opacity-80 inset-0 absolute group-hover:translate-y-0 translate-y-80 duration-500 flex flex-col justify-center"
+              >
+                <h3 class="ms-4 text-3xl font-semibold">Corba</h3>
+                <input class="id-meal hidden" value="" type="text" />
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="categories hidden mt-12">
+      <div
+        class="food-details-categories grid grid-cols-3 gap-7 w-[66%] mx-auto hidden"
+      >
+        <div>
+          <img
+            class="rounded-md"
+            src="https://www.themealdb.com/images/media/meals/58oia61564916529.jpg"
+            alt=""
+          />
+          <h2 class="text-white font-semibold text-3xl mt-2">Corba</h2>
+        </div>
+
+        <div class="col-span-2 text-white">
+          <div class="flex justify-between">
+            <h2 class="font-semibold text-3xl">Instructions</h2>
+            <button
+              onclick="closeDetailsCategories()"
+              class="text-black bg-red-600 p-1 rounded-xl fa-solid open-close-icon fa-2x fa-x"
+            ></button>
+          </div>
+          <p class="mt-2 mb-4">
+            Pick through your lentils for any foreign debris, rinse them 2 or 3
+            times, drain, and set aside. Fair warning, this will probably turn
+            your lentils into a solid block that you’ll have to break up later
+            In a large pot over medium-high heat, sauté the olive oil and the
+            onion with a pinch of salt for about 3 minutes, then add the carrots
+            and cook for another 3 minutes. Add the tomato paste and stir it
+            around for around 1 minute. Now add the cumin, paprika, mint, thyme,
+            black pepper, and red pepper as quickly as you can and stir for 10
+            seconds to bloom the spices. Congratulate yourself on how amazing
+            your house now smells. Immediately add the lentils, water, broth,
+            and salt. Bring the soup to a (gentle) boil. After it has come to a
+            boil, reduce heat to medium-low, cover the pot halfway, and cook for
+            15-20 minutes or until the lentils have fallen apart and the carrots
+            are completely cooked. After the soup has cooked and the lentils are
+            tender, blend the soup either in a blender or simply use a hand
+            blender to reach the consistency you desire. Taste for seasoning and
+            add more salt if necessary. Serve with crushed-up crackers, torn up
+            bread, or something else to add some extra thickness. You could also
+            use a traditional thickener (like cornstarch or flour), but I prefer
+            to add crackers for some texture and saltiness. Makes great
+            leftovers, stays good in the fridge for about a week.
+          </p>
+          <h3 class="font-medium text-2xl mb-2">
+            <span class="font-bold text-3xl">Area :</span> Turkish
+          </h3>
+          <h3 class="font-medium text-2xl mb-2">
+            <span class="font-bold text-3xl">Category :</span> Side
+          </h3>
+          <h3 class="font-semibold text-3xl">Recipes :</h3>
+          <div class="w-[100%] ms-3 mt-4 break-after-right">
+            <ul class="flex flex-wrap text-black">
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1 cup Lentils
+              </li>
+
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1 cup Lentils
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1 cup Lentils
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1 cup Lentils
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1/4 tsp Black Pepper
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1/4 tsp Red Pepper Flakes
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1/4 tsp Red Pepper Flakes
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1/4 tsp Red Pepper Flakes
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1/4 tsp Red Pepper Flakes
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1/4 tsp Red Pepper Flakes
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1/4 tsp Red Pepper Flakes
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1/4 tsp Red Pepper Flakes
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1/4 tsp Red Pepper Flakes
+              </li>
+            </ul>
+          </div>
+
+          <h3 class="font-medium text-3xl mt-2">Tags :</h3>
+          <ul class="text-black flex ms-3 mt-4">
+            <li
+              class="text-nowrap font-normal bg-[#F8D7DA] rounded-md me-4 mb-4 p-1"
+            >
+              Soup
+            </li>
+          </ul>
+
+          <ul class="text-white flex mt-4">
+            <a href="#" target="_blank">
+              <li
+                class="text-nowrap font-normal bg-green-700 rounded-md me-2 mb-4 ps-3 pe-3 pt-2 pb-2"
+              >
+                Source
+              </li>
+            </a>
+
+            <a href="#" target="_blank">
+              <li
+                class="text-nowrap font-normal bg-red-600 rounded-md mb-4 ps-3 pe-3 pt-2 pb-2"
+              >
+                Youtube
+              </li>
+            </a>
+          </ul>
+        </div>
+      </div>
+
+      <!-- hidden -->
+      <div class="food-hidden-categories-food hidden">
+        <button
+          onclick="closeCategories()"
+          class="ms-[95%] mb-20 text-black bg-red-600 p-1 rounded-xl fa-solid open-close-icon fa-2x fa-x"
+        ></button>
+        <div
+          class="food-categories-food grid grid-cols-4 gap-6 w-[70%] mx-auto"
+        >
+          <a onclick="openDetailsCategories()">
+            <div class="group relative overflow-hidden rounded-md">
+              <img
+                class="rounded-md"
+                src="https://www.themealdb.com/images/media/meals/58oia61564916529.jpg"
+                alt=""
+              />
+              <div
+                class="rounded-md bg-white opacity-80 inset-0 absolute group-hover:translate-y-0 translate-y-80 duration-500 flex flex-col justify-center"
+              >
+                <h3 class="ms-4 text-3xl font-semibold">Corba</h3>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="food-hidden-categories">
+        <div class="food-categories grid grid-cols-4 gap-6 w-[70%] mx-auto">
+          <a onclick="openCategories()">
+            <div class="group relative overflow-hidden rounded-md">
+              <img
+                class="rounded-md"
+                src="https://www.themealdb.com/images/category/beef.png"
+                alt=""
+              />
+              <div
+                class="rounded-md bg-white opacity-80 inset-0 absolute group-hover:translate-y-0 translate-y-80 duration-500 text-center"
+              >
+                <h3 class="ms-4 text-3xl font-normal mt-2">Corba</h3>
+                <p class="mx-3">
+                  Chicken is a type of domesticated fowl, a subspecies of the
+                  red junglefowl. It is one of the most common
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="area hidden mt-12">
+      <div
+        class="food-details-area grid grid-cols-3 gap-7 w-[66%] mx-auto hidden"
+      >
+        <div>
+          <img
+            class="rounded-md"
+            src="https://www.themealdb.com/images/media/meals/58oia61564916529.jpg"
+            alt=""
+          />
+          <h2 class="text-white font-semibold text-3xl mt-2">Corba</h2>
+        </div>
+
+        <div class="col-span-2 text-white">
+          <div class="flex justify-between">
+            <h2 class="font-semibold text-3xl">Instructions</h2>
+            <button
+              onclick="closeDetailsArea()"
+              class="text-black bg-red-600 p-1 rounded-xl fa-solid open-close-icon fa-2x fa-x"
+            ></button>
+          </div>
+          <p class="mt-2 mb-4">
+            Pick through your lentils for any foreign debris, rinse them 2 or 3
+            times, drain, and set aside. Fair warning, this will probably turn
+            your lentils into a solid block that you’ll have to break up later
+            In a large pot over medium-high heat, sauté the olive oil and the
+            onion with a pinch of salt for about 3 minutes, then add the carrots
+            and cook for another 3 minutes. Add the tomato paste and stir it
+            around for around 1 minute. Now add the cumin, paprika, mint, thyme,
+            black pepper, and red pepper as quickly as you can and stir for 10
+            seconds to bloom the spices. Congratulate yourself on how amazing
+            your house now smells. Immediately add the lentils, water, broth,
+            and salt. Bring the soup to a (gentle) boil. After it has come to a
+            boil, reduce heat to medium-low, cover the pot halfway, and cook for
+            15-20 minutes or until the lentils have fallen apart and the carrots
+            are completely cooked. After the soup has cooked and the lentils are
+            tender, blend the soup either in a blender or simply use a hand
+            blender to reach the consistency you desire. Taste for seasoning and
+            add more salt if necessary. Serve with crushed-up crackers, torn up
+            bread, or something else to add some extra thickness. You could also
+            use a traditional thickener (like cornstarch or flour), but I prefer
+            to add crackers for some texture and saltiness. Makes great
+            leftovers, stays good in the fridge for about a week.
+          </p>
+          <h3 class="font-medium text-2xl mb-2">
+            <span class="font-bold text-3xl">Area :</span> Turkish
+          </h3>
+          <h3 class="font-medium text-2xl mb-2">
+            <span class="font-bold text-3xl">Category :</span> Side
+          </h3>
+          <h3 class="font-semibold text-3xl">Recipes :</h3>
+          <div class="w-[100%] ms-3 mt-4 break-after-right">
+            <ul class="flex flex-wrap text-black">
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1 cup Lentils
+              </li>
+
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1 cup Lentils
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1 cup Lentils
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1 cup Lentils
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1/4 tsp Black Pepper
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1/4 tsp Red Pepper Flakes
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1/4 tsp Red Pepper Flakes
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1/4 tsp Red Pepper Flakes
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1/4 tsp Red Pepper Flakes
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1/4 tsp Red Pepper Flakes
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1/4 tsp Red Pepper Flakes
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1/4 tsp Red Pepper Flakes
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1/4 tsp Red Pepper Flakes
+              </li>
+            </ul>
+          </div>
+
+          <h3 class="font-medium text-3xl mt-2">Tags :</h3>
+          <ul class="text-black flex ms-3 mt-4">
+            <li
+              class="text-nowrap font-normal bg-[#F8D7DA] rounded-md me-4 mb-4 p-1"
+            >
+              Soup
+            </li>
+          </ul>
+
+          <ul class="text-white flex mt-4">
+            <a href="#" target="_blank">
+              <li
+                class="text-nowrap font-normal bg-green-700 rounded-md me-2 mb-4 ps-3 pe-3 pt-2 pb-2"
+              >
+                Source
+              </li>
+            </a>
+
+            <a href="#" target="_blank">
+              <li
+                class="text-nowrap font-normal bg-red-600 rounded-md mb-4 ps-3 pe-3 pt-2 pb-2"
+              >
+                Youtube
+              </li>
+            </a>
+          </ul>
+        </div>
+      </div>
+
+      <!-- hidden -->
+      <div class="food-hidden-area-food hidden">
+        <button
+          onclick="closeArea()"
+          class="ms-[95%] mb-20 text-black bg-red-600 p-1 rounded-xl fa-solid open-close-icon fa-2x fa-x"
+        ></button>
+        <div class="food-area-food grid grid-cols-4 gap-6 w-[70%] mx-auto">
+          <a onclick="openDetailsArea()">
+            <div class="group relative overflow-hidden rounded-md">
+              <img
+                class="rounded-md"
+                src="https://www.themealdb.com/images/media/meals/sywswr1511383814.jpg"
+                alt=""
+              />
+              <div
+                class="rounded-md bg-white opacity-80 inset-0 absolute group-hover:translate-y-0 translate-y-80 duration-500 flex flex-col justify-center"
+              >
+                <h3 class="ms-4 text-3xl font-semibold">Corba</h3>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="food-hidden-area">
+        <div class="food-area grid grid-cols-4 gap-6 w-[70%] mx-auto">
+          <a onclick="openArea()">
+            <div class="group relative overflow-hidden rounded-md">
+              <img
+                class="rounded-md"
+                src="https://www.themealdb.com/images/category/beef.png"
+                alt=""
+              />
+              <div
+                class="rounded-md bg-white opacity-80 inset-0 absolute group-hover:translate-y-0 translate-y-80 duration-500 text-center"
+              >
+                <h3 class="ms-4 text-3xl font-normal mt-2">Corba</h3>
+                <p class="mx-3">
+                  Chicken is a type of domesticated fowl, a subspecies of the
+                  red junglefowl. It is one of the most common
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="ingredients hidden mt-12">
+      <div
+        class="food-details-ingredients grid grid-cols-3 gap-7 w-[66%] mx-auto hidden"
+      >
+        <div>
+          <img
+            class="rounded-md"
+            src="https://www.themealdb.com/images/media/meals/58oia61564916529.jpg"
+            alt=""
+          />
+          <h2 class="text-white font-semibold text-3xl mt-2">Corba</h2>
+        </div>
+
+        <div class="col-span-2 text-white">
+          <div class="flex justify-between">
+            <h2 class="font-semibold text-3xl">Instructions</h2>
+            <button
+              onclick="closeDetailsIngredients()"
+              class="text-black bg-red-600 p-1 rounded-xl fa-solid open-close-icon fa-2x fa-x"
+            ></button>
+          </div>
+          <p class="mt-2 mb-4">
+            Pick through your lentils for any foreign debris, rinse them 2 or 3
+            times, drain, and set aside. Fair warning, this will probably turn
+            your lentils into a solid block that you’ll have to break up later
+            In a large pot over medium-high heat, sauté the olive oil and the
+            onion with a pinch of salt for about 3 minutes, then add the carrots
+            and cook for another 3 minutes. Add the tomato paste and stir it
+            around for around 1 minute. Now add the cumin, paprika, mint, thyme,
+            black pepper, and red pepper as quickly as you can and stir for 10
+            seconds to bloom the spices. Congratulate yourself on how amazing
+            your house now smells. Immediately add the lentils, water, broth,
+            and salt. Bring the soup to a (gentle) boil. After it has come to a
+            boil, reduce heat to medium-low, cover the pot halfway, and cook for
+            15-20 minutes or until the lentils have fallen apart and the carrots
+            are completely cooked. After the soup has cooked and the lentils are
+            tender, blend the soup either in a blender or simply use a hand
+            blender to reach the consistency you desire. Taste for seasoning and
+            add more salt if necessary. Serve with crushed-up crackers, torn up
+            bread, or something else to add some extra thickness. You could also
+            use a traditional thickener (like cornstarch or flour), but I prefer
+            to add crackers for some texture and saltiness. Makes great
+            leftovers, stays good in the fridge for about a week.
+          </p>
+          <h3 class="font-medium text-2xl mb-2">
+            <span class="font-bold text-3xl">Area :</span> Turkish
+          </h3>
+          <h3 class="font-medium text-2xl mb-2">
+            <span class="font-bold text-3xl">Category :</span> Side
+          </h3>
+          <h3 class="font-semibold text-3xl">Recipes :</h3>
+          <div class="w-[100%] ms-3 mt-4 break-after-right">
+            <ul class="flex flex-wrap text-black">
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1 cup Lentils
+              </li>
+
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1 cup Lentils
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1 cup Lentils
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1 cup Lentils
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1/4 tsp Black Pepper
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1/4 tsp Red Pepper Flakes
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1/4 tsp Red Pepper Flakes
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1/4 tsp Red Pepper Flakes
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1/4 tsp Red Pepper Flakes
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1/4 tsp Red Pepper Flakes
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1/4 tsp Red Pepper Flakes
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1/4 tsp Red Pepper Flakes
+              </li>
+              <li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+                1/4 tsp Red Pepper Flakes
+              </li>
+            </ul>
+          </div>
+
+          <h3 class="font-medium text-3xl mt-2">Tags :</h3>
+          <ul class="text-black flex ms-3 mt-4">
+            <li
+              class="text-nowrap font-normal bg-[#F8D7DA] rounded-md me-4 mb-4 p-1"
+            >
+              Soup
+            </li>
+          </ul>
+
+          <ul class="text-white flex mt-4">
+            <a href="#" target="_blank">
+              <li
+                class="text-nowrap font-normal bg-green-700 rounded-md me-2 mb-4 ps-3 pe-3 pt-2 pb-2"
+              >
+                Source
+              </li>
+            </a>
+
+            <a href="#" target="_blank">
+              <li
+                class="text-nowrap font-normal bg-red-600 rounded-md mb-4 ps-3 pe-3 pt-2 pb-2"
+              >
+                Youtube
+              </li>
+            </a>
+          </ul>
+        </div>
+      </div>
+
+      <!-- hidden -->
+      <div class="food-hidden-ingredients-food hidden">
+        <button
+          onclick="closeIngredients()"
+          class="ms-[95%] mb-20 text-black bg-red-600 p-1 rounded-xl fa-solid open-close-icon fa-2x fa-x"
+        ></button>
+        <div
+          class="food-ingredients-food grid grid-cols-4 gap-6 w-[70%] mx-auto"
+        >
+          <a onclick="openDetailsAngredients()">
+            <div class="group relative overflow-hidden rounded-md">
+              <img
+                class="rounded-md"
+                src="https://www.themealdb.com/images/media/meals/sywswr1511383814.jpg"
+                alt=""
+              />
+              <div
+                class="rounded-md bg-white opacity-80 inset-0 absolute group-hover:translate-y-0 translate-y-80 duration-500 flex flex-col justify-center"
+              >
+                <h3 class="ms-4 text-3xl font-semibold">Corba</h3>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="food-hidden-ingredients">
+        <div class="food-ingredients grid grid-cols-4 gap-6 w-[70%] mx-auto">
+          <a onclick="openIngredients()">
+            <div class="group relative overflow-hidden rounded-md">
+              <img
+                class="rounded-md"
+                src="https://www.themealdb.com/images/category/beef.png"
+                alt=""
+              />
+              <div
+                class="rounded-md bg-white opacity-80 inset-0 absolute group-hover:translate-y-0 translate-y-80 duration-500 text-center"
+              >
+                <h3 class="ms-4 text-3xl font-normal mt-2">Corba</h3>
+                <p class="mx-3">
+                  Chicken is a type of domesticated fowl, a subspecies of the
+                  red junglefowl. It is one of the most common
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-us w-[60%] mx-auto">
+      <div class="grid grid-cols-2 gap-4 place-content-center translate-y-96">
+        <div>
+          <input
+            onkeyup="inputsValidation()"
+            class="name-input rounded-md w-[80%] pt-2 pb-2 ps-2 ms-28"
+            type="text"
+            placeholder="Enter Your Name"
+          />
+          <div
+            id="nameAlert"
+            class="bg-red-600 text-white w-[80%] mt-2 p-3 rounded-lg hidden ms-auto"
+          >
+            Special characters and numbers not allowed
+          </div>
+        </div>
+        <div>
+          <input
+            onkeyup="inputsValidation()"
+            class="email-input rounded-md w-[80%] pt-2 pb-2 ps-2 me-auto"
+            type="email"
+            placeholder="Enter Your Email"
+          />
+          <div
+            id="emailAlert"
+            class="bg-red-600 text-white w-[80%] mt-2 p-3 rounded-lg hidden me-auto"
+          >
+            Email not valid *exemple@yyy.zzz
+          </div>
+        </div>
+
+        <div>
+          <input
+            onkeyup="inputsValidation()"
+            class="phone-input rounded-md w-[80%] pt-2 pb-2 ps-2 ms-28"
+            type="number"
+            placeholder="Enter Your Phone"
+          />
+          <div
+            id="phoneAlert"
+            class="bg-red-600 text-white w-[80%] mt-2 p-3 rounded-lg hidden ms-auto"
+          >
+            Enter valid Phone Number
+          </div>
+        </div>
+        <div>
+          <input
+            onkeyup="inputsValidation()"
+            class="age-input rounded-md w-[80%] pt-2 pb-2 ps-2 me-auto"
+            type="number"
+            placeholder="Enter Your Age"
+          />
+          <div
+            id="ageAlert"
+            class="bg-red-600 text-white w-[80%] mt-2 p-3 rounded-lg hidden me-auto"
+          >
+            Enter valid age
+          </div>
+        </div>
+        <div>
+          <input
+            onkeyup="inputsValidation()"
+            class="password-input rounded-md w-[80%] pt-2 pb-2 ps-2 ms-28"
+            type="password"
+            placeholder="Enter Your Password"
+          />
+          <div
+            id="passwordAlert"
+            class="bg-red-600 text-white w-[80%] mt-2 p-3 rounded-lg hidden ms-auto"
+          >
+            Enter valid password *Minimum eight characters, at least one letter
+            and one number:*
+          </div>
+        </div>
+        <div>
+          <input
+            onkeyup="inputsValidation()"
+            class="repassword-input rounded-md w-[80%] pt-2 pb-2 ps-2 me-auto"
+            type="password"
+            placeholder="Enter Your Repassword"
+          />
+          <div
+            id="repasswordAlert"
+            class="bg-red-600 text-white w-[80%] mt-2 p-3 rounded-lg hidden me-auto"
+          >
+            Enter valid repassword
+          </div>
+        </div>
+      </div>
+      <button
+        disabled="true"
+        class="submit-btn border pt-2 pb-2 ps-4 pe-4 border-red-700 bg-black text-red-700 rounded-lg ms-[33.5rem] translate-y-[27rem]"
+      >
+        Submit
+      </button>
+    </section>
+
+    <script src="./jquery-3.7.1.min.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
