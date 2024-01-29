@@ -21,7 +21,9 @@
           <button onclick="openIngredient()" class="text-left">
             Ingredients
           </button>
-          <button class="text-left">Contact Us</button>
+          <button onclick="openContactUs()" class="text-left">
+            Contact Us
+          </button>
         </div>
         <div class="text-white">
           <div>
@@ -76,7 +78,7 @@
       </div>
     </section>
 
-    <section class="home mt-12">
+    <section class="home hidden mt-12">
       <div
         class="food-details-home grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 w-[66%] mx-auto hidden"
       ></div>
@@ -105,7 +107,9 @@
       </div>
 
       <div class="food-hidden-categories">
-        <div class="food-categories grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 md:grid-cols-2 gap-6 w-[70%] mx-auto">
+        <div
+          class="food-categories grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 md:grid-cols-2 gap-6 w-[70%] mx-auto"
+        >
           <a onclick="openCategories()">
             <div class="group relative overflow-hidden rounded-md">
               <img
@@ -145,9 +149,9 @@
       </div>
 
       <div class="food-hidden-area">
-        <div class="food-area grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 md:grid-cols-2 gap-6 w-[70%] mx-auto">
-        
-        </div>
+        <div
+          class="food-area grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 md:grid-cols-2 gap-6 w-[70%] mx-auto"
+        ></div>
       </div>
     </section>
 
@@ -168,7 +172,9 @@
       </div>
 
       <div class="food-hidden-ingredients">
-        <div class="food-ingredients grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 md:grid-cols-2 gap-6 w-[70%] mx-auto">
+        <div
+          class="food-ingredients grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 md:grid-cols-2 gap-6 w-[70%] mx-auto"
+        >
           <a onclick="openIngredients()">
             <div class="group relative overflow-hidden rounded-md">
               <img
@@ -191,7 +197,7 @@
       </div>
     </section>
 
-    <section class="contact-us w-[60%] mx-auto hidden">
+    <section class="contact-us w-[60%] mx-auto">
       <div class="grid grid-cols-2 gap-4 place-content-center translate-y-96">
         <div>
           <input

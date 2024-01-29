@@ -26,12 +26,12 @@ function closeNav(){
 }
 
 
-
 function openSearch() {
   $('.home',).addClass('hidden');
   $('.area').addClass('hidden');
   $('.ingredients').addClass('hidden');
   $('.categories').addClass('hidden');
+  $('.contact-us').addClass('hidden');
   $('.search').removeClass('hidden');
   closeNav();
 }
@@ -41,6 +41,7 @@ function openCategorie() {
     $('.area').addClass('hidden');
     $('.search').addClass('hidden');
     $('.ingredients').addClass('hidden');
+    $('.contact-us').addClass('hidden');
     $('.categories').removeClass('hidden');
     closeNav();
 }
@@ -50,6 +51,7 @@ function openAreas() {
     $('.search').addClass('hidden');
     $('.categories').addClass('hidden');
     $('.ingredients').addClass('hidden');
+    $('.contact-us').addClass('hidden');
     $('.area').removeClass('hidden');
     closeNav();
     
@@ -60,7 +62,20 @@ function openIngredient() {
     $('.area').addClass('hidden');
     $('.search').addClass('hidden');
     $('.categories').addClass('hidden');
+    $('.contact-us').addClass('hidden');
+
     $('.ingredients').removeClass('hidden');
+closeNav();
+}
+
+function openContactUs() {
+  $('.home').addClass('hidden');
+  $('.area').addClass('hidden');
+  $('.search').addClass('hidden');
+  $('.categories').addClass('hidden');
+  $('.ingredients').addClass('hidden');
+  $('.contact-us').removeClass('hidden');
+  
 closeNav();
 }
 
@@ -265,6 +280,7 @@ $('.food-details-home').addClass('hidden');
 
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Search @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+{
 
 async function searchByName(s){
 
@@ -466,13 +482,8 @@ ${ food[0].strMeasure20} ${food[0].strIngredient20}
 
 }
 
-
-
-
-
-
+}
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ categories @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
 
 {
 
@@ -763,7 +774,6 @@ ${ food[0].strMeasure20} ${food[0].strIngredient20}
 }
 
 }
-
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Area @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
@@ -1269,81 +1279,76 @@ let repasswordInput = false;
 $(".name-input").on("focus", () => {
     nameInput = true
 })
-
 $(".email-input").on("focus", () => {
     emailInput = true
 })
-
 $(".phone-input").on("focus", () => {
     phoneInput = true
 
 })
-
 $(".age-input").on("focus", () => {
     ageInput = true
 })
-
 $(".password-input").on("focus", () => {
     passwordInput = true
 })
-
 $(".repassword-input").on("focus", () => {
     repasswordInput = true
 })
 
 
 function inputsValidation() {
-    if (nameInput) {
+  if (nameInput) {      
         if (nameValidation()) {
-            $("#nameAlert").replaceClass("block", "hidden")
+            $("#nameAlert").removeClass("block").addClass("hidden");
 
         } else {
-            $("#nameAlert").replaceClass("hidden", "block")
+            $("#nameAlert").removeClass("hidden").addClass("block");
 
         }
     }
     if (emailInput) {
 
         if (emailValidation()) {
-            $("#emailAlert").replaceClass("block", "hidden")
+            $("#emailAlert").removeClass("block").addClass("hidden");
         } else {
-            $("#emailAlert").replaceClass("hidden", "block")
+            $("#emailAlert").removeClass("hidden").addClass("block");
 
         }
     }
 
     if (phoneInput) {
         if (phoneValidation()) {
-            $("#phoneAlert").replaceClass("block", "hidden")
+            $("#phoneAlert").removeClass("block").addClass("hidden");
         } else {
-            $("#phoneAlert").replaceClass("hidden", "block")
+            $("#phoneAlert").removeClass("hidden").addClass("block");
 
         }
     }
 
     if (ageInput) {
         if (ageValidation()) {
-            $("#ageAlert").replaceClass("block", "hidden")
+            $("#ageAlert").removeClass("block").addClass("hidden");
         } else {
-            $("#ageAlert").replaceClass("hidden", "block")
+            $("#ageAlert").removeClass("hidden").addClass("block");
 
         }
     }
 
     if (passwordInput) {
         if (passwordValidation()) {
-            $("passwordAlert").replaceClass("block", "hidden")
+            $("#passwordAlert").removeClass("block").addClass("hidden");
         } else {
-            $("passwordAlert").replaceClass("hidden", "block")
+            $("#passwordAlert").removeClass("hidden").addClass("block");
 
         }
     }
 
     if (repasswordInput) {
         if (repasswordValidation()) {
-            $("repasswordAlert").replaceClass("block", "hidden")
+            $("#repasswordAlert").removeClass("block").addClass("hidden");
         } else {
-            $("repasswordAlert").replaceClass("hidden", "block")
+            $("#repasswordAlert").removeClass("hidden").addClass("block");
 
         }
     }
@@ -1362,27 +1367,27 @@ function inputsValidation() {
 } 
 
 function nameValidation() {
-    return (/^[a-zA-Z ]+$/.test($(".name-input").value))
+    return (/^[a-zA-Z ]+$/.test($(".name-input").val()))
 }
 
 function emailValidation() {
-    return (/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test($(".email-input").value))
+    return (/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test($(".email-input").val()))
 }
 
 function phoneValidation() {
-    return (/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/.test($(".phone-input").value))
+    return (/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/.test($(".phone-input").val()))
 }
 
 function ageValidation() {
-    return (/^(0?[1-9]|[1-9][0-9]|[1][1-9][1-9]|200)$/.test($(".age-input").value))
+    return (/^(0?[1-9]|[1-9][0-9]|[1][1-9][1-9]|200)$/.test($(".age-input").val()))
 }
 
 function passwordValidation() {
-    return (/^(?=.*\d)(?=.*[a-z])[0-9a-zA-Z]{8,}$/.test($(".password-input").value))
+    return (/^(?=.*\d)(?=.*[a-z])[0-9a-zA-Z]{8,}$/.test($(".password-input").val()))
 }
 
 function repasswordValidation() {
-    return $(".repassword-input").value == $(".password-input").value
+    return $(".repassword-input").val() == $(".password-input").val()
 }
 
 }
