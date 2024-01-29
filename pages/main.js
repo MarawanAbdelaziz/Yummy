@@ -16,7 +16,6 @@ function openNav(){
     
 }
 
-
 function closeNav(){
     $('.side-nav').fadeOut(1000)
     $('.btn-nav').html(`<button
@@ -26,9 +25,21 @@ function closeNav(){
     
 }
 
+
+
+function openSearch() {
+  $('.home',).addClass('hidden');
+  $('.area').addClass('hidden');
+  $('.ingredients').addClass('hidden');
+  $('.categories').addClass('hidden');
+  $('.search').removeClass('hidden');
+  closeNav();
+}
+
 function openCategorie() {
     $('.home').addClass('hidden');
     $('.area').addClass('hidden');
+    $('.search').addClass('hidden');
     $('.ingredients').addClass('hidden');
     $('.categories').removeClass('hidden');
     closeNav();
@@ -36,16 +47,19 @@ function openCategorie() {
 
 function openAreas() {
     $('.home').addClass('hidden');
+    $('.search').addClass('hidden');
     $('.categories').addClass('hidden');
     $('.ingredients').addClass('hidden');
     $('.area').removeClass('hidden');
     closeNav();
+    
 }
 
 function openIngredient() {
     $('.home').addClass('hidden');
-    $('.categories').addClass('hidden');
     $('.area').addClass('hidden');
+    $('.search').addClass('hidden');
+    $('.categories').addClass('hidden');
     $('.ingredients').removeClass('hidden');
 closeNav();
 }
@@ -245,10 +259,215 @@ function closeDetails(){
 $('.food-hidden-home').removeClass('hidden');
 $('.food-details-home').addClass('hidden');
 }
+
+
 }
 
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Search @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+async function searchByName(s){
+
+  const api = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${s}`)
+  const response = await api.json();
+
+  displayFoodSearch(response.meals)
+  console.log(s);
+  console.log('1 ', response.meals);
+}
+
+async function searchByFLetter(s){
+
+  const api = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${s}`)
+  const response = await api.json();
+  displayFoodSearch(response.meals)
+}
+
+
+function displayFoodSearch(food){
+  let cartona = ``;
+ 
+  
+ for (let i = 0; i < food.length; i++) {
+
+ cartona += `
+   <a  onclick="openDetailsSearch(${food[i].idMeal})">
+     <div class="group relative overflow-hidden rounded-md">
+       <img
+         class="rounded-md"
+         src="${food[i].strMealThumb}"
+         alt=""
+       />
+       <div
+         class="rounded-md bg-white opacity-80 inset-0 absolute group-hover:translate-y-0
+          translate-y-80 duration-500 flex flex-col justify-center"
+       >
+         <h3 class="ms-4 text-3xl font-semibold">${food[i].strMeal}</h3>
+       </div>
+     </div>
+   </a>
+`
+
+}
+
+console.log('2');
+$('.food-search').html(cartona) ;
+
+}
+
+function openDetailsSearch(id){
+  $('.food-hidden-search').addClass('hidden');
+  $('.food-details-search').removeClass('hidden');
+
+   getDetailsSearch(id);
+
+}
+
+function closeDetailsSearch(){
+  $('.food-hidden-search').removeClass('hidden');
+  $('.food-details-search').addClass('hidden');
+  }
+  
+  
+async function getDetailsSearch(id){
+
+  const api = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
+  const response = await api.json();
+  displayDetailsSearch(response.meals)
+}
+
+function displayDetailsSearch(food){
+   cartona2 =  `
+
+  <div>
+  <img
+    class="rounded-md"
+    src="${food[0].strMealThumb}"
+    alt=""
+  />
+  <h2 class="text-white font-semibold text-3xl mt-2">${food[0].strMeal}</h2>
+</div>
+
+<div class="col-span-2 text-white">
+  <div class="flex justify-between">
+    <h2 class="font-semibold text-3xl">Instructions</h2>
+    <button onclick="closeDetailsSearch()"
+      class="text-black bg-red-600 p-1 rounded-xl fa-solid open-close-icon fa-2x fa-x"
+    ></button>
+  </div>
+  <p class="mt-2 mb-4">
+    ${food[0].strInstructions}
+  </p>
+  <h3 class="font-medium text-2xl mb-2">
+    <span class="font-bold text-3xl">Area :</span> ${food[0].strArea}
+  </h3>
+  <h3 class="font-medium text-2xl mb-2">
+    <span class="font-bold text-3xl">Category :</span> ${food[0].strCategory}
+  </h3>
+  <h3 class="font-semibold text-3xl">Recipes :</h3>
+  <div class="w-[100%] ms-3 mt-4 break-after-right">
+    <ul class="flex flex-wrap text-black">
+      
+   
+<li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+${ food[0].strMeasure1} ${food[0].strIngredient1}
+</li>     
+<li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+${ food[0].strMeasure2} ${food[0].strIngredient2}
+</li>
+<li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+${ food[0].strMeasure3} ${food[0].strIngredient3}
+</li> 
+<li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+${ food[0].strMeasure4} ${food[0].strIngredient4}
+</li>
+<li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+${ food[0].strMeasure5} ${food[0].strIngredient5}
+</li>
+<li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+${ food[0].strMeasure6} ${food[0].strIngredient6}
+</li>
+<li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+${ food[0].strMeasure7} ${food[0].strIngredient7}
+</li>
+<li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+${ food[0].strMeasure8} ${food[0].strIngredient8}
+</li>
+<li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+${ food[0].strMeasure9} ${food[0].strIngredient9}
+</li>
+<li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+${ food[0].strMeasure10} ${food[0].strIngredient10}
+</li>
+<li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+${ food[0].strMeasure11} ${food[0].strIngredient11}
+</li>
+<li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+${ food[0].strMeasure12} ${food[0].strIngredient12}
+</li>
+<li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+${ food[0].strMeasure13} ${food[0].strIngredient13}
+</li>
+<li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+${ food[0].strMeasure14} ${food[0].strIngredient14}
+</li>
+<li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+${ food[0].strMeasure15} ${food[0].strIngredient15}
+</li>
+<li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+${ food[0].strMeasure16} ${food[0].strIngredient16}
+</li>
+<li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+${ food[0].strMeasure17} ${food[0].strIngredient17}
+</li>
+<li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+${ food[0].strMeasure18} ${food[0].strIngredient18}
+</li>
+<li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+${ food[0].strMeasure19} ${food[0].strIngredient19}
+</li>
+<li class="text-nowrap bg-[#CFF4FC] rounded-md me-4 mb-4 p-1">
+${ food[0].strMeasure20} ${food[0].strIngredient20}
+</li>
+
+
+      </ul>
+  </div>
+
+  <h3 class="font-medium text-3xl mt-2">Tags :</h3>
+  <ul class="text-black flex ms-3 mt-4">
+    <li
+      class="text-nowrap font-normal bg-[#F8D7DA] rounded-md me-4 mb-4 p-1"
+    >
+    ${food[0].strTags}
+    </li>
+  </ul>
+
+  <ul class="text-white flex mt-4">
+    <a href="${food[0].strSource}" target="_blank">
+      <li
+        class="text-nowrap font-normal bg-green-700 rounded-md me-2 mb-4 ps-3 pe-3 pt-2 pb-2"
+      >
+        Source
+      </li>
+    </a>
+
+    <a href="${food[0].strYoutube}" target="_blank">
+      <li
+        class="text-nowrap font-normal bg-red-600 rounded-md mb-4 ps-3 pe-3 pt-2 pb-2"
+      >
+        Youtube
+      </li>
+    </a>
+  </ul>
+</div>
+ `
+ $('.food-details-search').html(cartona2) ;
+
+}
+
+
+
 
 
 
@@ -1036,6 +1255,8 @@ ${ food[0].strMeasure20} ${food[0].strIngredient20}
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Contact Us @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 
+{
+
 
 let nameInput = false;
 let emailInput = false;
@@ -1162,4 +1383,6 @@ function passwordValidation() {
 
 function repasswordValidation() {
     return $(".repassword-input").value == $(".password-input").value
+}
+
 }
