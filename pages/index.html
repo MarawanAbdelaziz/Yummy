@@ -53,7 +53,7 @@
 
     <section class="search hidden mt-12">
       <div
-        class="food-details-search grid grid-cols-3 gap-7 w-[66%] mx-auto hidden"
+        class="food-details-search grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 w-[66%] mx-auto hidden"
       ></div>
 
       <div class="food-hidden-search">
@@ -78,17 +78,19 @@
 
     <section class="home mt-12">
       <div
-        class="food-details-home grid grid-cols-3 gap-7 w-[66%] mx-auto hidden"
+        class="food-details-home grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 w-[66%] mx-auto hidden"
       ></div>
 
       <div class="food-hidden-home">
-        <div class="food-home grid grid-cols-4 gap-6 w-[70%] mx-auto"></div>
+        <div
+          class="food-home grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 md:grid-cols-2 gap-6 w-[70%] mx-auto"
+        ></div>
       </div>
     </section>
 
     <section class="categories hidden mt-12">
       <div
-        class="food-details-categories grid grid-cols-3 gap-7 w-[66%] mx-auto hidden"
+        class="food-details-categories grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 w-[66%] mx-auto hidden"
       ></div>
 
       <!-- hidden -->
@@ -98,12 +100,12 @@
           class="ms-[95%] mb-20 text-black bg-red-600 p-1 rounded-xl fa-solid open-close-icon fa-2x fa-x"
         ></button>
         <div
-          class="food-categories-food grid grid-cols-4 gap-6 w-[70%] mx-auto"
+          class="food-categories-food grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 md:grid-cols-2 gap-6 w-[70%] mx-auto"
         ></div>
       </div>
 
       <div class="food-hidden-categories">
-        <div class="food-categories grid grid-cols-4 gap-6 w-[70%] mx-auto">
+        <div class="food-categories grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 md:grid-cols-2 gap-6 w-[70%] mx-auto">
           <a onclick="openCategories()">
             <div class="group relative overflow-hidden rounded-md">
               <img
@@ -128,7 +130,7 @@
 
     <section class="area hidden mt-12">
       <div
-        class="food-details-area grid grid-cols-3 gap-7 w-[66%] mx-auto hidden"
+        class="food-details-area grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 w-[66%] mx-auto hidden"
       ></div>
 
       <!-- hidden -->
@@ -138,37 +140,20 @@
           class="ms-[95%] mb-20 text-black bg-red-600 p-1 rounded-xl fa-solid open-close-icon fa-2x fa-x"
         ></button>
         <div
-          class="food-area-food grid grid-cols-4 gap-6 w-[70%] mx-auto"
+          class="food-area-food grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 md:grid-cols-2 gap-6 w-[70%] mx-auto"
         ></div>
       </div>
 
       <div class="food-hidden-area">
-        <div class="food-area grid grid-cols-4 gap-6 w-[70%] mx-auto">
-          <a onclick="openArea()">
-            <div class="group relative overflow-hidden rounded-md">
-              <img
-                class="rounded-md"
-                src="https://www.themealdb.com/images/category/beef.png"
-                alt=""
-              />
-              <div
-                class="rounded-md bg-white opacity-80 inset-0 absolute group-hover:translate-y-0 translate-y-80 duration-500 text-center"
-              >
-                <h3 class="ms-4 text-3xl font-normal mt-2">Corba</h3>
-                <p class="mx-3">
-                  Chicken is a type of domesticated fowl, a subspecies of the
-                  red junglefowl. It is one of the most common
-                </p>
-              </div>
-            </div>
-          </a>
+        <div class="food-area grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 md:grid-cols-2 gap-6 w-[70%] mx-auto">
+        
         </div>
       </div>
     </section>
 
     <section class="ingredients hidden mt-12">
       <div
-        class="food-details-ingredients grid grid-cols-3 gap-7 w-[66%] mx-auto hidden"
+        class="food-details-ingredients grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 w-[66%] mx-auto hidden"
       ></div>
 
       <!-- hidden -->
@@ -178,12 +163,12 @@
           class="ms-[95%] mb-20 text-black bg-red-600 p-1 rounded-xl fa-solid open-close-icon fa-2x fa-x"
         ></button>
         <div
-          class="food-ingredients-food grid grid-cols-4 gap-6 w-[70%] mx-auto"
+          class="food-ingredients-food grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 md:grid-cols-2 gap-6 w-[70%] mx-auto"
         ></div>
       </div>
 
       <div class="food-hidden-ingredients">
-        <div class="food-ingredients grid grid-cols-4 gap-6 w-[70%] mx-auto">
+        <div class="food-ingredients grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 md:grid-cols-2 gap-6 w-[70%] mx-auto">
           <a onclick="openIngredients()">
             <div class="group relative overflow-hidden rounded-md">
               <img

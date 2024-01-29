@@ -341,11 +341,11 @@ function displayDetailsSearch(food){
 
   <div>
   <img
-    class="rounded-md"
+    class="rounded-md "
     src="${food[0].strMealThumb}"
     alt=""
   />
-  <h2 class="text-white font-semibold text-3xl mt-2">${food[0].strMeal}</h2>
+  <h2 class="text-white col-span-2 font-semibold text-3xl mt-2">${food[0].strMeal}</h2>
 </div>
 
 <div class="col-span-2 text-white">
