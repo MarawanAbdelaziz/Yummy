@@ -282,7 +282,7 @@ $('.food-details-home').addClass('hidden');
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Search @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 {
 
-async function searchByName(s){
+window.searchByName = async function (s){
 
   const api = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${s}`)
   const response = await api.json();
@@ -292,7 +292,7 @@ async function searchByName(s){
   console.log('1 ', response.meals);
 }
 
-async function searchByFLetter(s){
+window.searchByFLetter = async function (s){
 
   const api = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${s}`)
   const response = await api.json();
@@ -1260,7 +1260,6 @@ ${ food[0].strMeasure20} ${food[0].strIngredient20}
     
     }
     
-
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Contact Us @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
